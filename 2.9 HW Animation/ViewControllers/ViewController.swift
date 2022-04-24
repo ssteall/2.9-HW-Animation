@@ -41,9 +41,9 @@ class ViewController: UIViewController {
     private func setLabels() {
         presetNameLabel.text = animation.name
         curveNameLabel.text = animation.curve
-        forceLabel.text = String(round(animation.force * 10) / 10)
-        durationLabel.text = String(round(animation.duration * 10) / 10)
-        delayLabel.text = String(round(animation.delay * 10) / 10)
+        forceLabel.text = String(format: "%.02f", animation.force)
+        durationLabel.text = String(format: "%.02f", animation.duration)
+        delayLabel.text = String(format: "%.02f", animation.delay)
     }
 }
 

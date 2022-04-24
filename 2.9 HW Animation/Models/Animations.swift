@@ -4,19 +4,18 @@
 //
 //  Created by Дмитрий Мирошников on 23.04.2022.
 //
-import Spring
 
 struct Animation {
     static func getRandomAnimation() -> Animation {
-        Animation(name: Spring.AnimationPreset.allCases.randomElement()?.rawValue ?? "",
-                  curve: Spring.AnimationCurve.allCases.randomElement()?.rawValue ?? "",
+        Animation(name: DataManager.shared.names.randomElement()?.rawValue ?? "",
+                  curve: DataManager.shared.curves.randomElement()?.rawValue ?? "",
                   force: Double.random(in: 1...3),
-                  duration: Double.random(in: 0.1...2),
-                  delay: Double.random(in: 0.1...2))
+                  duration: Double.random(in: 0.5...2),
+                  delay: Double.random(in: 0.1...1))
     }
     
-    let name: Spring.AnimationPreset.RawValue
-    let curve: Spring.AnimationCurve.RawValue
+    let name: String
+    let curve: String
     let force: Double
     let duration: Double
     let delay: Double
